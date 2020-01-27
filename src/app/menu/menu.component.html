@@ -1,0 +1,9 @@
+<nav>
+    <form class="menu-form">
+        <mat-form-field class="input-name">
+        <input matInput #InputName placeholder="Recherche par nom" value="" (keyup)="filtrer(inputName.value)">
+        </mat-form-field>
+    </form>
+</nav>
+
+<app-liste-pokemons></app-liste-pokemons>
