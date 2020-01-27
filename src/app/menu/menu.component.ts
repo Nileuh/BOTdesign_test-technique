@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-menu',
@@ -6,16 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  // private searchTerms = new Subject<string>();
-	// pokemons$: Observable<Pokemon[]>;
+  
+  searchPokemon = new Pokemon();
 
   constructor() { }
-
-  // 	// Ajoute un terme de recherche dans le flux de l'Observable 'searchTerms'
-	// search(term: string): void {
-	// 	this.searchTerms.next(term);
-	// }
 
 
   ngOnInit() {

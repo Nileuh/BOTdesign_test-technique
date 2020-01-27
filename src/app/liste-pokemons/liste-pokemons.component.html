@@ -1,20 +1,18 @@
 <section class="liste-pokemons">
-  <div class="pokemons-for" *ngFor="let pokemon of pokemons">
-    <mat-card class="pokemon-card">
-      <mat-card-header>
-        <mat-card-title>{{ pokemon.name }}</mat-card-title>
-        <mat-card-subtitle>N°{{ pokemon.id }}</mat-card-subtitle>
-      </mat-card-header>
+    <div class="pokemons-for" *ngFor="let pokemon of pokemons | filterBy: searchPokemon">
+        <mat-card class=" pokemon-card ">
+            <mat-card-header>
+                <mat-card-title>{{ pokemon.name }}</mat-card-title>
+                <mat-card-subtitle>N°{{ pokemon.id }}</mat-card-subtitle>
+            </mat-card-header>
 
-      <img mat-card-image class="imgPokemon" src="{{ pokemon.img }}" />
-      <mat-card-content class="content">
-        Types :
-        {{ pokemon.type }}
-      </mat-card-content>
-      <mat-card-footer class="caracteristiques">
-        HP : {{ pokemon.stats.hp }} - Attack : {{ pokemon.stats.attack }} -
-        Defense : {{ pokemon.stats.defense }}
-      </mat-card-footer>
-    </mat-card>
-  </div>
+            <img mat-card-image class="imgPokemon " src="{{ pokemon.img }} " />
+            <mat-card-content class="content ">
+                Types : {{ pokemon.type }}
+            </mat-card-content>
+            <mat-card-footer class="caracteristiques ">
+                HP : {{ pokemon.stats.hp }} - Attack : {{ pokemon.stats.attack }} - Defense : {{ pokemon.stats.defense }}
+            </mat-card-footer>
+        </mat-card>
+    </div>
 </section>

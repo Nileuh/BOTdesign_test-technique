@@ -1,9 +1,38 @@
 <nav>
+    <header>
+        <h1>BOTdesign - Test technique - Arnaud Huelin</h1>
+    </header>
+
     <form class="menu-form">
-        <mat-form-field class="input-name">
-        <input matInput #InputName placeholder="Recherche par nom" value="" (keyup)="filtrer(inputName.value)">
+        <mat-form-field class="field-menu">
+            <input type="text" matInput placeholder="Recherche par nom" value="" [(ngModel)]="searchPokemon.name" name="name">
+        </mat-form-field>
+        <mat-form-field class="field-menu">
+            <input type="number" matInput value="" [(ngModel)]="searchPokemon.id" name="id">
+        </mat-form-field>
+        <mat-form-field class="field-menu">
+            <mat-label>Types</mat-label>
+            <mat-select [(value)]="searchPokemon.type">
+                <mat-option>None</mat-option>
+                <mat-option value="Bug">Bug</mat-option>
+                <mat-option value="Dragon">Dragon</mat-option>
+                <mat-option value="Electric">Electric</mat-option>
+                <mat-option value="Fighting">Fighting</mat-option>
+                <mat-option value="Fire">Fire</mat-option>
+                <mat-option value="Flying">Flying</mat-option>
+                <mat-option value="Ghost">Ghost</mat-option>
+                <mat-option value="Grass">Grass</mat-option>
+                <mat-option value="Ground">Ground</mat-option>
+                <mat-option value="Ice">Ice</mat-option>
+                <mat-option value="Normal">Normal</mat-option>
+                <mat-option value="Poison">Poison</mat-option>
+                <mat-option value="Psychic">Psychic</mat-option>
+                <mat-option value="Rock">Rock</mat-option>
+                <mat-option value="Steel">Steel</mat-option>
+                <mat-option value="Water">Water</mat-option>
+            </mat-select>
         </mat-form-field>
     </form>
 </nav>
 
-<app-liste-pokemons></app-liste-pokemons>
+<app-liste-pokemons [searchPokemon]='searchPokemon'></app-liste-pokemons>

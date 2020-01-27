@@ -6,23 +6,28 @@ import { AppComponent } from './app.component';
 import { ListePokemonsComponent } from './liste-pokemons/liste-pokemons.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatCardModule, MatInputModule } from '@angular/material';
-import { HeaderComponent } from './header/header.component';
+import { MatCardModule, MatInputModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { MenuComponent } from './menu/menu.component';
+
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListePokemonsComponent,
-    HeaderComponent,
-    MenuComponent
+    MenuComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatInputModule 
+    MatInputModule,
+    FilterPipeModule,
+    FormsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import  *  as  seed  from  '../../assets/seed.json';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-liste-pokemons',
@@ -9,10 +10,13 @@ import  *  as  seed  from  '../../assets/seed.json';
 export class ListePokemonsComponent implements OnInit {
   pokemons: any = (seed as any).default;
 
-  constructor() { }
+  @Input()
+  searchPokemon:Pokemon;
+
+  constructor() { 
+  }
 
   ngOnInit() {
-    console.log(seed);
   }
 
 }
